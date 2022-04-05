@@ -20,6 +20,9 @@ function getRandomArbitrary(min, max) {
 
 const readWrite = async () => {
   fs.readFile("date.txt", "utf-8", (err, data) => {
+    if (data === NaN) {
+      console.log(crash);
+    }
     if (err) throw err;
     newData = Math.round(Number(data) + getRandomArbitrary(0, interval));
     console.log("checksum", newData);
@@ -30,11 +33,12 @@ const readWrite = async () => {
     });
   });
 };
+
 readWrite();
 
 setTimeout(() => {
-  console.log(dateFormat(1649330110000, "ddd mmm d h:MM:ss yyyy"));
   const DATE = dateFormat(newData, "ddd mmm d H:MM:ss yyyy");
+  console.log("testable date", DATE);
   const commitMessage = "this commit";
 
   const commitDate = `${commitMessage}
