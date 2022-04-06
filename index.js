@@ -68,7 +68,7 @@ setTimeout(() => {
       await git.add(".");
       await git.commit(commitMessage, { "--date": DATE });
       await git.push("origin", branch);
-      await git;
+      await git.checkoutBranch();
     } else {
       console.log("push is off");
     }
