@@ -36,7 +36,7 @@ const readWrite = async () => {
 
 const commitMessage = "new commit";
 const branch = "mainPage";
-const push = "false";
+const push = true;
 
 readWrite();
 
@@ -66,7 +66,7 @@ setTimeout(() => {
     console.log("test");
     if (push) {
       await git.add(".");
-      await git.commit("next commit bugfix", { "--date": DATE });
+      await git.commit(commitMessage, { "--date": DATE });
       await git.push("origin", branch);
     } else {
       console.log("push is off");
