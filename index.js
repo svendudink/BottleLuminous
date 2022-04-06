@@ -68,6 +68,8 @@ setTimeout(() => {
       await git.add(".");
       await git.commit("next commit bugfix", { "--date": DATE });
       await git.push("origin", branch);
+    } else {
+      console.log("push is off");
     }
   };
 
