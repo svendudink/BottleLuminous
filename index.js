@@ -35,7 +35,7 @@ const readWrite = async () => {
 };
 
 const commitMessage = "new commit";
-const branch = "mainPage";
+const branch = "firstPage";
 const push = true;
 
 readWrite();
