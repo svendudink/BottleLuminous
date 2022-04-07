@@ -15,6 +15,7 @@ const git = simpleGit(options);
 const gitAdder = async () => {
   await git.add(".");
   await git.commit("testingGitcommit");
+  await git.push("origin", "main");
 };
 
 gitAdder();
