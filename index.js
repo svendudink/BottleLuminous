@@ -8,5 +8,13 @@ const options = {
   maxConcurrentProcesses: 6,
   trimmed: false,
 };
+const git = simpleGit(options);
 
-simpleGit().add(".").commit("next commit").push("origin", "main");
+// simpleGit().add(".").commit("next commit").push("origin", "main");
+
+const gitAdder = async () => {
+  await git.add(".");
+  await git.commit("testingGitcommit");
+};
+
+gitAdder();
