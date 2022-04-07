@@ -6,7 +6,8 @@
 /.pnp
 .pnp.js
 /helper/serial.js
-
+date.txt
+index.js
 
 # testing
 /coverage
