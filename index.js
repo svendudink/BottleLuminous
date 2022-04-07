@@ -1,5 +1,5 @@
-import simpleGit from "simple-git";
+import { simpleGit, CleanOptions } from "simple-git";
 
-import jsonfile from "jsonfile";
+simpleGit().clean(CleanOptions.FORCE);
 
 simpleGit().add(".").commit("next commit").push("origin", "main");
