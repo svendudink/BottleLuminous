@@ -35,6 +35,7 @@ const readWrite = async () => {
 };
 
 const commitMessage = "new commit";
+
 const branch = "firstPage";
 const push = true;
 
@@ -43,7 +44,6 @@ readWrite();
 setTimeout(() => {
   const DATE = dateFormat(newData, "ddd mmm d H:MM:ss yyyy");
   console.log("testable date", DATE);
-  const commitMessage = "this commit";
 
   const commitDate = `${commitMessage}
 
