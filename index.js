@@ -34,6 +34,7 @@ readWrite();
 
 setTimeout(() => {
   console.log(dateFormat(1649330110000, "ddd mmm d h:MM:ss yyyy"));
+  const DATE = dateFormat(newData, "ddd mmm d H:MM:ss yyyy");
   const commitMessage = "this commit";
 
   const commitDate = `${commitMessage}
@@ -41,7 +42,7 @@ setTimeout(() => {
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# Date:      ${dateFormat(newData, "ddd mmm d H:MM:ss yyyy")} +0200
+# Date:      ${DATE} +0200
 #
 # On branch main
 # Your branch is up to date with 'origin/main'.
@@ -57,7 +58,7 @@ setTimeout(() => {
   const gitAdder = async () => {
     console.log("test");
     await git.add(".");
-    await git.commit("new file commit");
+    await git.commit(DATE, { "--date": DATE });
     await git.push("origin", "mainPage");
   };
 
