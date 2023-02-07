@@ -34,6 +34,10 @@ const readWrite = async () => {
   });
 };
 
+const commitMessage = "new commit";
+const branch = "mainPage";
+const push = "false";
+
 readWrite();
 
 setTimeout(() => {
@@ -56,14 +60,17 @@ setTimeout(() => {
   fs.writeFile("./.git/COMMIT_EDITMSG", commitDate, (err) => {
     if (err) throw err;
     console.log("The file has been saved!");
-    console.log(dateFormat(newData, "ddd mmm d H:MM:ss yyyy"));
   });
 
   const gitAdder = async () => {
     console.log("test");
-    await git.add(".");
-    await git.commit("next commit bugfix", { "--date": DATE });
-    await git.push("origin", "mainPage");
+    if (push) {
+      await git.add(".");
+      await git.commit("next commit bugfix", { "--date": DATE });
+      await git.push("origin", branch);
+    } else {
+      console.log("push is off");
+    }
   };
 
   setTimeout(() => {
