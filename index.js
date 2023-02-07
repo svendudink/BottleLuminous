@@ -10,7 +10,17 @@ const options = {
 };
 const git = simpleGit(options);
 
-// simpleGit().add(".").commit("next commit").push("origin", "main");
+`Merge branch 'main' of https://github.com/svendudink/BottleLuminous
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed May 18 12:19:33 2022 +0200
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# No changes`;
 
 const gitAdder = async () => {
   console.log("test");
