@@ -58,7 +58,7 @@ setTimeout(() => {
     console.log("test");
     await git.add(".");
     await git.commit("new file commit");
-    await git.push("origin", "main");
+    await git.push("origin", "mainPage");
   };
 
   setTimeout(() => {
