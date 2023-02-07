@@ -29,40 +29,39 @@ const readWrite = async () => {
       console.log(dateFormat(newData, "ddd mmm d H:MM:ss yyyy"));
     });
   });
-
-  console.log("testnew");
 };
-
 readWrite();
 
-console.log(dateFormat(1649330110000, "ddd mmm d h:MM:ss yyyy"));
-const commitMessage = "this commit";
+setTimeout(() => {
+  console.log(dateFormat(1649330110000, "ddd mmm d h:MM:ss yyyy"));
+  const commitMessage = "this commit";
 
-const commitDate = `${commitMessage}
+  const commitDate = `${commitMessage}
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# Date:      ${newData} +0200
+# Date:      ${dateFormat(newData, "ddd mmm d h:MM:ss yyyy")} +0200
 #
 # On branch main
 # Your branch is up to date with 'origin/main'.
 #
 # No changes`;
 
-fs.writeFile("./.git/COMMIT_EDITTEST", commitDate, (err) => {
-  if (err) throw err;
-  console.log("The file has been saved!");
-  console.log(dateFormat(newData, "ddd mmm d H:MM:ss yyyy"));
-});
+  fs.writeFile("./.git/COMMIT_EDITMSG", commitDate, (err) => {
+    if (err) throw err;
+    console.log("The file has been saved!");
+    console.log(dateFormat(newData, "ddd mmm d H:MM:ss yyyy"));
+  });
 
-const gitAdder = async () => {
-  console.log("test");
-  await git.add(".");
-  await git.commit("new file commit");
-  await git.push("origin", "main");
-};
+  const gitAdder = async () => {
+    console.log("test");
+    await git.add(".");
+    await git.commit("new file commit");
+    await git.push("origin", "main");
+  };
 
-gitAdder();
-
-setTimeout(() => {}, 2000);
+  setTimeout(() => {
+    gitAdder();
+  }, 500);
+}, 500);
