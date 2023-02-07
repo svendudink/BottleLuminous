@@ -62,7 +62,7 @@ setTimeout(() => {
   const gitAdder = async () => {
     console.log("test");
     await git.add(".");
-    await git.commit(DATE, { "--date": DATE });
+    await git.commit("next commit bugfix", { "--date": DATE });
     await git.push("origin", "mainPage");
   };
 
