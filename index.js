@@ -41,7 +41,7 @@ setTimeout(() => {
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
-# Date:      ${dateFormat(newData, "ddd mmm d h:MM:ss yyyy")} +0200
+# Date:      ${dateFormat(newData, "ddd mmm d H:MM:ss yyyy")} +0200
 #
 # On branch main
 # Your branch is up to date with 'origin/main'.
