@@ -38,7 +38,7 @@ readWrite();
 console.log(dateFormat(1649330110000, "ddd mmm d h:MM:ss yyyy"));
 const commitMessage = "this commit";
 
-const commmitDate = `${commitMessage}
+const commitDate = `${commitMessage}
 
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -49,6 +49,12 @@ const commmitDate = `${commitMessage}
 # Your branch is up to date with 'origin/main'.
 #
 # No changes`;
+
+fs.writeFile("./.git/COMMIT_EDITTEST", commitDate, (err) => {
+  if (err) throw err;
+  console.log("The file has been saved!");
+  console.log(dateFormat(newData, "ddd mmm d H:MM:ss yyyy"));
+});
 
 const gitAdder = async () => {
   console.log("test");
